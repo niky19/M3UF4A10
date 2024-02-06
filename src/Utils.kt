@@ -3,7 +3,7 @@ import java.util.*
 /**
  *      Contains utility functions used in the game.
  * The functions are static and can be called from any class.
- * @authors Nikita Barbosa, Omar Zouaoui, Fabián Gómez.
+ * @authors niky19
  */
 
 /**
@@ -17,7 +17,7 @@ fun checkInt(sc: Scanner): Int {
         if (sc.hasNextInt()) {
             return sc.nextInt()
         } else {
-            println("Inválido: no es un número. Vuelve a introducir:")
+            println("Error. Vuelve a introducir:")
             sc.next()
         }
     }
@@ -33,7 +33,7 @@ fun checkDouble(sc: Scanner): Double {
         if (sc.hasNextDouble()) {
             return sc.nextDouble()
         } else {
-            println("Invàlid: no es un numero. Introdueix un enter:")
+            println("Error. Vuelve a introducir:")
             sc.next()
         }
     }
@@ -51,7 +51,7 @@ fun getYesOrNo(sc: Scanner): Boolean {
         if (userAnswer == "S" || userAnswer == "N") {
             return userAnswer == "S"
         } else {
-            println("Invàlid: no es una resposta vàlida. Introdueix S o N:")
+            println("Error. Introduce S o N:")
         }
     }
 }
@@ -69,9 +69,9 @@ fun getIntInRange(startInt: Int, endInt: Int, sc: Scanner): Int {
             if (userNumber in startInt..endInt) {
                 return userNumber
             }
-            println("Invàlid: no está entre les opcions. Introdueix un numero entre $startInt i $endInt:")
+            println("Error. Introduce un numero entre $startInt i $endInt:")
         } else {
-            println("Invàlid: no es un ente. Introdueix un numero entre $startInt i $endInt:")
+            println("Error: no es un ente. Introduce un numero entre $startInt i $endInt:")
             sc.next()
         }
     }

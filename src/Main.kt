@@ -3,15 +3,18 @@ import java.util.*
 fun main() {
     val sc = Scanner(System.`in`)
     partida(sc)
-
 }
 
 fun partida(sc: Scanner) {
     val juego: Juego = Tablero()
-    val mazo = juego.crearBaraja()
+    val espanyola = listOf("Oros", "Copas", "Espadas", "Bastos")
+    val mazo = juego.crearBaraja(mutableListOf(), espanyola)
+    juego.printMisCartas()
     juego.mezclar(mazo)
-    juego.mostrarCartesDisponibles(mazo)
     juego.repartir(mazo, sc)
-    juego.verMazoDevueltas(mazo)
-    
+    juego.pedirCarta(mazo)
+    juego.printMisCartas()
+    juego.verMazoDevueltas()
+
+
 }
