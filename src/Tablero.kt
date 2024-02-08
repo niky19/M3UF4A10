@@ -12,15 +12,17 @@ class Tablero : Juego {
     }
 
     // Crea una baraja de cartas de 12 cartas por palo
-    override fun crearBaraja(baraja: MutableList<Carta>, palos: List<String>): MutableList<Carta> {
+  /*
+    override fun crearBaraja(baraja: MutableList<Carta>, palos: List<String>, numPalos : Int): MutableList<Carta> {
+
         for (palo in palos) {
-            for (numero in 1..12) {
+            for (numero in 1..numPalos) {
                 baraja.add(Carta(palo, numero))
             }
         }
         return baraja
     }
-
+*/
 
     // Mezcla la baraja de cartas
     override fun mezclar(mazo: MutableList<Carta>): MutableList<Carta> {
@@ -50,14 +52,16 @@ class Tablero : Juego {
     override fun pedirCarta(mazo: MutableList<Carta>) {
         val nuevaCarta = siguienteCarta(mazo)
         println("Carta conseguida: $nuevaCarta")
-
-        //almacenarCartasDevueltas(nuevaCarta)
+        //printMisCartas()
+        devolver()
     }
 
     // Almacena las cartas devueltas por el usuario
-    override fun almacenarCartasDevueltas(aDevolver: Carta): MutableList<Carta> {
+    override fun devolver(): MutableList<Carta> {
+        val aDevolver = misCartas.random()
         misCartas.remove(aDevolver)
         resto.add(aDevolver)
+        println("Carta devuelta: $aDevolver")
         return resto
     }
 

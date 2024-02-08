@@ -8,4 +8,5 @@ class Carta(tipo : String, valor : Int) {
     override fun toString(): String {
         return "$numero de $palo"
     }
+
 }
